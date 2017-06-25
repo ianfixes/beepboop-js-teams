@@ -52,7 +52,7 @@ module.exports = function NewAPI (options) {
       cb) {
       cb = cb || noop
 
-      provider.set(key, value, function (err, value) {
+      provider.create(key, value, function (err, value) {
         if (err) {
           logger.error('Error calling create(%s): %s, %s, %s, %s, %s',
             access_token,

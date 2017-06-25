@@ -16,8 +16,8 @@ teams.list(page, per_page, function (err, result) {
 })
 ```
 
-## BeepBoopPersist([options])
-Returns a Beep Boop Perist api:
+## BeepBoopTeams([options])
+Returns a Beep Boop Teams api:
 
 + `options.token` - defaults to `process.env.BEEPBOOP_TOKEN` - auth token passed into environment by Beep Boop
 + `options.url` - defaults to `process.env.BEEPBOOP_API_URL || 'https://beepboophq.com/api/v1'` - service url passed into environment by Beep Boop
@@ -25,4 +25,48 @@ Returns a Beep Boop Perist api:
 + `options.logger` - defaults to `null` - Should be an object w/ a `debug` and `error` function.
 
 
-## I was too lazy to copy the API over at the moment
+### .list(page, per_page, callback)
+
+List all keys:
+
+```javascript
+var page = 0
+var per_page = 10
+teams.list(page, per_page, function (err, result) {
+  // check for err
+
+  // result is an array of objects as defined at https://beepboophq.com/docs/article/api-slack-teams#slack-team-description
+})
+```
+
+### .get(team_id, callback)
+
+Get a value for a team:
+
+```javascript
+teams.get('abcde', function (err, result) {
+  // check for err
+
+  // result is an object as defined at https://beepboophq.com/docs/article/api-slack-teams#slack-team-description
+})
+```
+
+### .create(access_token, bot_access_token, incoming_webhook_url, incoming_webhook_channel, incoming_webhook_config_url, callback))
+
+Create a new team entry:
+
+```javascript
+teams.create('xoxp-1234', 'xoxb-1234', '', '', '', function (err) {
+  // check for err
+})
+```
+
+### .del(team_id, callback)
+
+Delete a team
+
+```javascript
+teams.del('abcde', function (err) {
+  // check for err
+})
+```
