@@ -33,7 +33,7 @@ module.exports = function NewAPI (options) {
       })
     },
     get: function (team_id, cb) {
-      provider.get(key, function (err, value) {
+      provider.get(team_id, function (err, value) {
         if (err) {
           logger.error('Error calling get(%s): %s', team_id, err.message)
         } else {
