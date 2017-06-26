@@ -2,7 +2,9 @@
 
 # [Beep Boop](https://beepboophq.com) Teams JS Client
 
-This is a node.js client for the [Beep Boop Teams service](https://beepboophq.com/docs/article/api-teams).
+This is a node.js client for the [Beep Boop Teams service](https://beepboophq.com/docs/article/api-slack-teams).  This provides acces to all the relevant access tokens and user/team IDs you might need.
+
+
 If running on Beep Boop the below example should just work. If running outside of Beep Boop it will fall back to an in memory
 store. See further configuration options below.
 
